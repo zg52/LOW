@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>版本控制</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <!-- 搜索 -->
+        <div class="row m-b">
+          <div class="col-sm-12 form-inline">
+            <div class="form-group">
+              <!-- input -->
+              <div class="input-group keySearch">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="这里输入关键词" class="input form-control">
+              </div>
+              <!-- 搜索按钮 -->
+              <div class="input-group">
+                <button type="button" class="btn" title="检索">
+                  <i class="fa fa-search" style="color: #269abc;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-lg">
+          <div class="col-sm-12">
+            <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+              <thead>
+                <tr>
+                  <th data-checkbox="true"></th>
+                  <th>ID</th>
+                  <th>标题</th>
+                  <th>时间</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>地震的成因</td>
+                  <td>2017-01-13 10:21:30</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editSenceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+              <button data-toggle="modal" data-target="#editSenceModal" type="button" title="新增" class="btn btn-outline btn-default">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+              <button data-toggle="modal" data-target="#delModal" type="button" title="批量删除" class="btn btn-outline btn-default">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Panel Other -->
+  </div>
+  <!-- 版本资料弹框 -->
+  <div class="modal fade" id="editSenceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+    <div class="modal-dialog modal-lg" style="width: 600px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">修改版本信息</h4>
+        </div>
+        <div class="modal-body">
+          <!-- 表单 -->
+          <form class="form-horizontal" id="validateForm">
+            <div class="form-group">
+              <label for="title_id" class="col-sm-2 control-label">常识类别:</label>
+              <div class="col-sm-10">
+                <select id="title_id" name="commonSenseTitleId" class="chosen-select" tabindex="2" data-placeholder="请选择常识类别">
+                  <option value=""></option>
+                  <option value="110000" hassubinfo="true">气象灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                  <option value="120000" hassubinfo="true">海洋灾害</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="commonSenseTitle" class="col-sm-2 control-label">常识标题:</label>
+              <div class="col-sm-10">
+                <input id="commonSenseTitle" name="commonSenseTitle" type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="commonSenseContent" class="col-sm-2 control-label">常识内容:</label>
+              <div class="col-sm-10">
+                <textarea style="width:100%; height:234px;" id="commonSenseContent" name="commonSenseContent" type="text" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="form-group text-center">
+              <button type="button" class="btn btn-info save">保存</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 删除弹框 -->
+  <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">删除</h4>
+        </div>
+        <div class="modal-body">
+          <p>确定要删除吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-info confirm">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+
+
+  <!-- Bootstrap table -->
+  <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+  <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- Chosen -->
+  <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+  <script>
+    $(function () {
+      // 表格初始化
+      $('#exampleTableEvents').bootstrapTable({
+        pagination: true, // 分页
+        pageNumber: 1, // 首页页码
+        pageSize: 10, // 每页数据个数
+        pageList: [10, 25, 50, 100] // 页面数据条数
+      });
+      // 下拉框
+      $(".chosen-select").chosen({
+        disable_search: true // 是否禁用搜索框
+      });
+      // 防止弹框中下拉框无宽度
+      $(".chosen-container").css("width", "100%");
+
+      // 修改版本保存方法
+      $('#editSenceModal .save').on({
+        click: function (event) {
+          // var button = $(event.relatedTarget) // 触发事件的按钮  
+          // var recipient = button.data('whatever') // 解析出data-whatever内容
+          alert("触发了保存方法");
+          $('#editSenceModal').modal('hide'); // model隐藏
+        }
+      });
+      // 删除弹框的确定方法
+      $('#delModal .confirm').on({
+        click: function (event) {
+          // var button = $(event.relatedTarget) // 触发事件的按钮  
+          // var recipient = button.data('whatever') // 解析出data-whatever内容
+          alert("触发了删除的确定方法");
+          $('#delModal').modal('hide'); // model隐藏
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

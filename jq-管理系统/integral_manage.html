@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>积分管理</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <!-- 表格 -->
+  <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <!-- 下拉框 -->
+  <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+  <!-- 提示框 -->
+  <link href="css/plugins/messenger/messenger.css" rel="stylesheet">
+  <link href="css/plugins/messenger/messenger-theme-future.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <!-- 搜索 -->
+        <div class="row m-b">
+          <div class="col-sm-12 form-inline">
+            <div class="form-group">
+              <!-- input -->
+              <div class="input-group keySearch">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="这里输入关键词" class="input form-control">
+              </div>
+              <!-- 搜索按钮 -->
+              <div class="input-group">
+                <button type="button" class="btn" title="检索">
+                  <i class="fa fa-search" style="color: #269abc;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-lg">
+          <div class="col-sm-12">
+            <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+              <thead>
+                <tr>
+                  <th data-checkbox="true"></th>
+                  <th>ID</th>
+                  <th>用户名</th>
+                  <th>电话</th>
+                  <th>当前积分</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>胡浩</td>
+                  <td>13922203302</td>
+                  <td>20</td>
+                  <td>
+                      <div class="input-group">
+                        <input type="text" style="width: 80px;" class="form-control" placeholder="输入积分">
+                        <span class="input-group-btn pull-left">
+                          <button type="button" title="编辑" class="editIntegral btn btn-info">
+                            <i class="fa fa-pencil-square-o"></i>
+                          </button>
+                        </span>
+                      </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Panel Other -->
+  </div>
+  <!-- 删除弹框 -->
+  <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">删除</h4>
+        </div>
+        <div class="modal-body">
+          <p>确定要删除吗？</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-info confirm">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+
+
+  <!-- Bootstrap table -->
+  <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+  <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- Chosen -->
+  <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+   <!-- messenger -->
+   <script src="js/plugins/messenger/messenger.js"></script>
+
+  <script>
+    $(function () {
+      // 表格初始化
+      $('#exampleTableEvents').bootstrapTable({
+        pagination: true, // 分页
+        pageNumber: 1, // 首页页码
+        pageSize: 10, // 每页数据个数
+        pageList: [10, 25, 50, 100] // 页面数据条数
+      });
+      // 提示框位置
+      $._messengerDefaults = {
+        extraClasses: 'messenger-fixed messenger-theme-future messenger-on-top'
+      };
+      // 提示框的使用方法
+      $(".editIntegral").click(function () {
+        $.globalMessenger().post({
+        message: "请输入10的倍数",//提示信息
+        type: 'error',//消息类型。error、info、success
+        hideAfter: 2,//多长时间消失 单位是秒
+        showCloseButton:true,//是否显示关闭按钮
+        hideOnNavigate: true //是否隐藏导航
+        });
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

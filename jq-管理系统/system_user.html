@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>系统用户</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <!-- 搜索 -->
+                <div class="row m-b">
+                    <div class="col-sm-12 form-inline">
+                        <div class="form-group">
+                            <!-- input -->
+                            <div class="input-group keySearch">
+                                <i class="fa fa-search"></i>
+                                <input type="text" placeholder="这里输入关键词" class="input form-control">
+                            </div>
+                            <!-- select -->
+                            <div class="input-group">
+                                <select data-placeholder="请选择职位" class="chosen-select" style="width:140px;" tabindex="2">
+                                    <option value=""></option>
+                                    <option value="1">全部</option>
+                                    <option value="110000" hassubinfo="true">超级管理员</option>
+                                    <option value="120000" hassubinfo="true">客服</option>
+                                </select>
+                            </div>
+                            <!-- 搜索按钮 -->
+                            <div class="input-group">
+                                <button type="button" class="btn" title="检索">
+                                    <i class="fa fa-search" style="color: #269abc;"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+                            <thead>
+                                <tr>
+                                    <th data-checkbox="true"></th>
+                                    <th>序号</th>
+                                    <th>编号</th>
+                                    <th>用户名</th>
+                                    <th>姓名</th>
+                                    <th>职位</th>
+                                    <th>最近登录</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>1</td>
+                                    <td>003</td>
+                                    <td>
+                                        <span class="text-info">xiaming1</span>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button data-toggle="modal" data-target="#editUserInfoModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>2</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>3</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>4</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>5</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>6</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>7</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>8</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>9</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>10</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>11</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>12</td>
+                                    <td>003</td>
+                                    <td>
+                                        <a>xiaming1</a>
+                                    </td>
+                                    <td>xiaming1</td>
+                                    <td>客服</td>
+                                    <td></td>
+                                    <td>
+                                        <button type="button" title="编辑" class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                        <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                            <button data-toggle="modal" data-target="#editUserInfoModal" type="button" title="新增" class="btn btn-outline btn-default">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                            </button>
+                            <button data-toggle="modal" data-target="#delModal" type="button" title="批量删除" class="btn btn-outline btn-default">
+                                <i class="fa fa-trash" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Panel Other -->
+    </div>
+
+    <!-- 用户资料弹框 -->
+    <div class="modal fade" id="editUserInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">修改</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 表单 -->
+                    <form class="form-horizontal" id="validateForm">
+                        <div class="form-group">
+                            <select data-placeholder="请选择职位" class="chosen-select" style="width:140px;" tabindex="2">
+                                <!-- 第一个留空 显示为请选择职位 -->
+                                <option value=""></option>
+                                <option value="110000" hassubinfo="true">超级管理员</option>
+                                <option value="120000" hassubinfo="true">客服</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select data-placeholder="请选择职位" class="chosen-select" style="width:140px;" tabindex="2">
+                                <!-- 第一个留空 显示为请选择职位 -->
+                                <option value=""></option>
+                                <option value="110000" hassubinfo="true">超级管理员</option>
+                                <option value="120000" hassubinfo="true">客服</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input id="loginname" name="USERNAME" type="text" placeholder="这里输入用户名" title="用户名" maxlength="32" class="form-control" readonly="readonly">
+                        </div>
+                        <div class="form-group">
+                            <input id="NUMBER" name="number" type="text" maxlength="32" placeholder="这里输入编号" title="编号" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <input id="password" name="password" type="password"  placeholder="输入密码" title="密码" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="chkpwd" name="chkpwd" type="password"  placeholder="确认密码" title="确认密码" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="name" name="name" type="text" maxlength="32" placeholder="这里输入姓名" title="姓名" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="PHONE_PASS" name="PHONE_PASS" type="text" maxlength="32" placeholder="这里输入电话系统密码" title="电话系统密码" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="PHONE" name="phone" type="number" maxlength="32" placeholder="这里输入手机号" title="手机号" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="EMAIL" name="email" type="email" maxlength="32" placeholder="这里输入邮箱" title="邮箱" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input id="BZ" name="BZ" type="text" maxlength="64" placeholder="这里输入备注" title="备注" class="form-control">
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="button" class="btn btn-info save">保存</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 删除弹框 -->
+    <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">删除</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定要删除选中的数据吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="js/content.js?v=1.0.0"></script>
+
+
+    <!-- Bootstrap table -->
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- Chosen -->
+    <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+    <script>
+        // 表格初始化
+        $('#exampleTableEvents').bootstrapTable({
+            pagination: true, // 分页
+            pageNumber: 1, // 首页页码
+            pageSize: 10, // 每页数据个数
+            pageList: [10, 25, 50, 100] // 页面数据条数
+        });
+        // 下拉框
+        $(".chosen-select").chosen({
+            disable_search: false, // 是否有搜索框
+            no_results_text: '找不到' // 搜索不到时的提示文字
+        });
+        // 防止弹框中下拉框无宽度
+        $(".chosen-container").css("width", "100%");
+        // 弹框出现时的方法
+        $('#editUserInfoModal').on('show.bs.modal', function () {
+          alert("触发了弹框出现时的方法");
+        });
+        // 保存方法
+        $('#editUserInfoModal .save').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了添加组的保存方法");
+                $('#addGroup').modal('hide'); // model隐藏
+            }
+        });  
+        // 弹框关闭时的方法
+        $('#editUserInfoModal').on('hide.bs.modal', function () {
+          alert("触发了弹框关闭时的方法");
+        });
+
+        // 删除弹框的确定方法
+        $('#delModal .confirm').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了删除的确定方法");
+                $('#delModal').modal('hide'); // model隐藏
+            }
+        });  
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设备管理</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+  <link href="css/plugins/messenger/messenger.css" rel="stylesheet">
+  <link href="css/plugins/messenger/messenger-theme-future.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox">
+      <div class="ibox-content">
+        <!-- 搜索 -->
+        <div class="row m-b">
+          <div class="col-sm-12 form-inline">
+            <div class="form-group">
+              <!-- input -->
+              <div class="input-group keySearch">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="这里输入关键词" class="input form-control">
+              </div>
+              <!-- 搜索按钮 -->
+              <div class="input-group">
+                <button type="button" class="btn">
+                  <i class="fa fa-search" style="color: #269abc;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-lg">
+          <div class="col-sm-12 pre-scrollable" style="max-height: 100%">
+            <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+              <thead>
+                <tr>
+                  <th data-checkbox="true"></th>
+                  <th>设备码</th>
+                  <th>设备状态</th>
+                  <th>到期时间</th>
+                  <th>设备类型</th>
+                  <th>生产厂商</th>
+                  <th>用户姓名</th>
+                  <th>用户电话</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editDeviceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editDeviceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editDeviceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#editDeviceModal" type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button data-toggle="modal" data-target="#delModal" type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>89860615010003267439</td>
+                  <td>正常</td>
+                  <td>2016-10-20 13:57:27.0</td>
+                  <td>0</td>
+                  <td></td>
+                  <td>周珊</td>
+                  <td>18611168205</td>
+                  <td>
+                    <button type="button" title="编辑" class="btn btn-info btn-xs">
+                      <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                    <button type="button" title="删除" class="btn btn-danger btn-xs" style="margin-left:5px;">
+                      <i class="fa fa-trash"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+              <button data-toggle="modal" data-target="#addDeviceModal" type="button" title="新增" class="btn btn-outline btn-default">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+              </button>
+              <button id="unBind" type="button" title="解绑" class="alertA btn btn-outline btn-default">
+                <i class="fa fa-expand" aria-hidden="true"></i>
+              </button>
+              <button type="button" title="更换" class="btn btn-outline btn-default">
+                <i class="fa fa-random" aria-hidden="true"></i>
+              </button>
+              <button data-toggle="modal" data-target="#QRCodeModal" type="button" title="二维码" class="btn btn-outline btn-default">
+                <i class="fa fa-qrcode" aria-hidden="true"></i>
+              </button>
+              <button data-toggle="modal" data-target="#delModal" type="button" title="批量删除" class="btn btn-outline btn-default">
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Panel Other -->
+  </div>
+  <!-- 编辑设备资料弹框 -->
+  <div class="modal fade" id="editDeviceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+      <div class="modal-dialog modal-lg" style="width: 600px;">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">编辑</h4>
+              </div>
+              <div class="modal-body pre-scrollable" style="max-height: 400px;">
+                  <!-- 表单 -->
+                  <form class="form-horizontal" id="validateForm">
+                      <div class="form-group">
+                        <label for="device_no" class="col-sm-2 control-label">设备号码:</label>
+                        <div class="col-sm-10">
+                          <input id="device_no" name="device_no" type="text" placeholder="这里输入设备号码" title="设备号码" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="device_type" class="col-sm-2 control-label">设备类型:</label>
+                        <div class="col-sm-10">
+                          <select  id="device_type" name="device_type" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">0</option>
+                            <option value="120000" hassubinfo="true">1</option>
+                            <option value="120000" hassubinfo="true">2</option>
+                            <option value="120000" hassubinfo="true">3</option>
+                            <option value="120000" hassubinfo="true">4</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="device_status" class="col-sm-2 control-label">设备状态:</label>
+                        <div class="col-sm-10">
+                          <select  id="device_status" name="device_status" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">启用</option>
+                            <option value="120000" hassubinfo="true">停用</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="devive_factory" class="col-sm-2 control-label">设备厂家:</label>
+                        <div class="col-sm-10">
+                          <select  id="devive_factory" name="devive_factory" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">穿云科技</option>
+                            <option value="120000" hassubinfo="true">巴卡拉</option>
+                            <option value="120000" hassubinfo="true">3</option>
+                            <option value="120000" hassubinfo="true">4拉</option>
+                            <option value="120000" hassubinfo="true">巴4221</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="datepicker2" class="col-sm-2 control-label">延期:</label>
+                        <div class="col-sm-10">
+                          <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                            <input id="datepicker2" class="form-control layer-date">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="isNeed" class="col-sm-2 control-label">强制升级:</label>
+                        <div class="col-sm-10">
+                          <select  id="isNeed" name="isNeed" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">是</option>
+                            <option value="120000" hassubinfo="true">否</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                          <button type="button" class="btn btn-info save">保存</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- 新增设备资料弹框 -->
+  <div class="modal fade" id="addDeviceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+      <div class="modal-dialog modal-lg" style="width: 600px;">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">新增</h4>
+              </div>
+              <div class="modal-body">
+                  <!-- 表单 -->
+                  <form class="form-horizontal" id="validateForm">
+                      <div class="form-group">
+                        <label for="device_no" class="col-sm-2 control-label">设备号码:</label>
+                        <div class="col-sm-10">
+                          <input id="device_no" name="device_no" type="text" placeholder="这里输入设备号码" title="设备号码" class="form-control">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="device_type" class="col-sm-2 control-label">设备类型:</label>
+                        <div class="col-sm-10">
+                          <select  id="device_type" name="device_type" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">0</option>
+                            <option value="120000" hassubinfo="true">1</option>
+                            <option value="120000" hassubinfo="true">2</option>
+                            <option value="120000" hassubinfo="true">3</option>
+                            <option value="120000" hassubinfo="true">4</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="device_status" class="col-sm-2 control-label">设备状态:</label>
+                        <div class="col-sm-10">
+                          <select  id="device_status" name="device_status" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">启用</option>
+                            <option value="120000" hassubinfo="true">停用</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="devive_factory" class="col-sm-2 control-label">设备厂家:</label>
+                        <div class="col-sm-10">
+                          <select  id="devive_factory" name="devive_factory" class="chosen-select" tabindex="2">
+                            <option value="110000" hassubinfo="true">穿云科技</option>
+                            <option value="120000" hassubinfo="true">巴卡拉</option>
+                            <option value="120000" hassubinfo="true">3</option>
+                            <option value="120000" hassubinfo="true">4拉</option>
+                            <option value="120000" hassubinfo="true">巴4221</option>
+                        </select>
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                          <button type="button" class="btn btn-info save">保存</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+  <!-- 删除弹框 -->
+  <div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">删除</h4>
+              </div>
+              <div class="modal-body">
+                  <p>确定要删除吗？</p>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-info confirm">确定</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- 二维码弹框 -->
+  <div class="modal fade" id="QRCodeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+      <div class="modal-dialog modal-sm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">二维码</h4>
+              </div>
+              <div class="modal-body">
+                  <a href="#">
+                    <img src="images/erweima.png" width="100%">
+                  </a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+
+
+  <!-- Bootstrap table -->
+  <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+  <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- Chosen -->
+  <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+  <!-- layerDate plugin javascript -->
+  <script src="js/plugins/layer/laydate/laydate.js"></script>
+  <!-- messenger -->
+  <script src="js/plugins/messenger/messenger.js"></script>
+
+  <script>
+    // 表格初始化
+    $('#exampleTableEvents').bootstrapTable({
+      pagination: true, // 分页
+      pageNumber: 1, // 首页页码
+      pageSize: 10, // 每页数据个数
+      pageList: [10, 25, 50, 100] // 页面数据条数
+    });
+
+    // 下拉框
+    $(".chosen-select").chosen({
+        disable_search: true // 是否禁用搜索框
+    });
+    // 防止弹框中下拉框无宽度
+    $(".chosen-container").css("width", "100%");
+
+    var datepicker2 = {
+      elem: '#datepicker2',
+      format: 'YYYY/MM/DD hh:mm:ss',
+      min: laydate.now(),
+      max: '2099-06-16 23:59:59',
+      istime: true,
+      istoday: false,
+      choose: function (datas) {
+          alert("日期");
+      }
+    };
+    // 初始化日期
+    laydate(datepicker2);
+    // 编辑设备保存方法
+    $('#editDeviceModal .save').on({
+        click: function (event) {
+            // var button = $(event.relatedTarget) // 触发事件的按钮  
+            // var recipient = button.data('whatever') // 解析出data-whatever内容
+            alert("触发了保存方法");
+            $('#editDeviceModal').modal('hide'); // model隐藏
+        }
+    }); 
+
+    // 编辑设备保存方法
+    $('#addDeviceModal .save').on({
+        click: function (event) {
+            // var button = $(event.relatedTarget) // 触发事件的按钮  
+            // var recipient = button.data('whatever') // 解析出data-whatever内容
+            alert("触发了保存方法");
+            $('#addDeviceModal').modal('hide'); // model隐藏
+        }
+    });
+
+    // 删除弹框的确定方法
+    $('#delModal .confirm').on({
+      click: function (event) {
+          // var button = $(event.relatedTarget) // 触发事件的按钮  
+          // var recipient = button.data('whatever') // 解析出data-whatever内容
+          alert("触发了删除的确定方法");
+          $('#delModal').modal('hide'); // model隐藏
+      }
+    }); 
+
+    // 提示框位置
+    $._messengerDefaults = {
+      extraClasses: 'messenger-fixed messenger-theme-future messenger-on-top'
+    };
+    // 提示框的使用方法
+    $("#unBind").click(function () {
+      $.globalMessenger().post({
+      message: "操作成功",//提示信息
+      type: 'info',//消息类型。error、info、success
+      hideAfter: 2,//多长时间消失
+      showCloseButton:true,//是否显示关闭按钮
+      hideOnNavigate: true //是否隐藏导航
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

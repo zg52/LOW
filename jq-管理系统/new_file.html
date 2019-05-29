@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<div style="width: 500px; border: 1px solid #ccc;margin-left: 20%;text-align: center;height: 200px;">
+			<div id="video-total">
+				第<input class="tz-ipt" type="text" style="cursor: pointer;"/>个/共<span>0</span>个
+				<button id="Button">hhhhhhh</button>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var put =$('.tz-ipt').val();
+			$('.tz-ipt').keyup(function(event){
+				if(event.keyCode == 13) {
+					var put= $('.tz-ipt').val();
+					console.log(put)
+				}
+			})
+			$('#Button').click(function(){
+				var put= $('.tz-ipt').val();
+				console.log(put)
+			})
+			
+			
+		</script>
+	</body>
+</html>

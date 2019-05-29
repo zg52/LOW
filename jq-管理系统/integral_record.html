@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>申请记录</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="shortcut icon" href="favicon.ico">
+  <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+  <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+  <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+  <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+  <link href="css/animate.css" rel="stylesheet">
+  <link href="css/style.css?v=4.1.0" rel="stylesheet">
+  <!-- 样式 -->
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+  <div class="wrapper wrapper-content animated fadeInRight">
+    <div class="ibox float-e-margins">
+      <div class="ibox-content">
+        <!-- 搜索 -->
+        <div class="row m-b">
+          <div class="col-sm-12 form-inline">
+            <div class="form-group">
+              <!-- input -->
+              <div class="input-group keySearch">
+                <i class="fa fa-search"></i>
+                <input type="text" placeholder="这里输入关键词" class="input form-control">
+              </div>
+              <!-- 搜索按钮 -->
+              <div class="input-group">
+                <button type="button" class="btn" title="检索">
+                  <i class="fa fa-search" style="color: #269abc;"></i>
+                </button>
+              </div>
+              <!-- select -->
+              <div class="input-group">
+                <select class="chosen-select" style="width:140px;" tabindex="2">
+                  <option value="1" hassubinfo="true">未处理列表</option>
+                  <option value="2" hassubinfo="true">已处理列表</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-lg">
+          <div class="col-sm-12">
+            <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+              <thead>
+                <tr>
+                  <th data-checkbox="true"></th>
+                  <th>ID</th>
+                  <th>申请时间</th>
+                  <th>申请积分</th>
+                  <th>申请状态</th>
+                  <th>申请人</th>
+                  <th>审核</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-checkbox="true"></td>
+                  <td>1</td>
+                  <td>2017-04-07 16:30:16.0</td>
+                  <td>10</td>
+                  <td>未处理</td>
+                  <td>胡浩</td>
+                  <td>
+                    <button data-toggle="modal" data-target="#viewMsgModal" type="button" title="查看" class="btn btn-link btn-xs">
+                      <i class="fa fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Panel Other -->
+  </div>
+
+  <!-- 审核详情弹框 -->
+  <div class="modal fade" id="viewMsgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+    <div class="modal-dialog modal-sm" style="width: 600px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">审核详情</h4>
+        </div>
+        <div class="modal-body">
+          <!-- 表单 -->
+          <form class="form-horizontal" id="validateForm">
+            <table data-striped="true" data-toggle="table" data-mobile-responsive="true">
+              <tbody>
+                <tr>
+                  <td>申请时间:</td>
+                  <td>2017-04-07 16:30:16.0</td>
+                </tr>
+                <tr>
+                  <td>申请人:</td>
+                  <td>2017-04-07 16:30:16.0</td>
+                </tr>
+                <tr>
+                  <td>兑换数量:</td>
+                  <td>10</td>
+                </tr>
+                <tr>
+                  <td>申请状态:</td>
+                  <td>未处理</td>
+                </tr>
+                <tr>
+                  <td>开户银行:</td>
+                  <td>中国银行</td>
+                </tr>
+                <tr>
+                  <td>银行卡号:</td>
+                  <td>621856665888455555</td>
+                </tr>
+                <tr>
+                  <td>开户人姓名:</td>
+                  <td>利好</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="form-group text-center m-t-md">
+              <button type="button" class="btn btn-info save">通过</button>
+              <button type="button" class="btn btn-default" onclick="reject();" data-dismiss="modal">驳回</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全局js -->
+  <script src="js/jquery.min.js?v=2.1.4"></script>
+  <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+  <!-- 自定义js -->
+  <script src="js/content.js?v=1.0.0"></script>
+
+
+  <!-- Bootstrap table -->
+  <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+  <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+  <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+  <!-- Chosen -->
+  <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+  <script>
+    // 表格初始化
+    $('#exampleTableEvents').bootstrapTable({
+      pagination: true, // 分页
+      pageNumber: 1, // 首页页码
+      pageSize: 10, // 每页数据个数
+      pageList: [10, 25, 50, 100] // 页面数据条数
+    });
+   
+    
+    // 下拉框
+    $(".chosen-select").chosen({
+      disable_search: true // 是否有搜索框
+    });
+    // 防止弹框中下拉框无宽度
+    $(".chosen-container").css("width", "100%");
+    // 弹框出现时的方法
+    $('#viewMsgModal').on('show.bs.modal', function () {
+      alert("触发了弹框出现时的方法");
+    });
+    // 保存方法
+    $('#viewMsgModal .save').on({
+      click: function (event) {
+        // var button = $(event.relatedTarget) // 触发事件的按钮  
+        // var recipient = button.data('whatever') // 解析出data-whatever内容
+        alert("触发了添加组的保存方法");
+        $('#viewMsgModal').modal('hide'); // model隐藏
+      }
+    });
+    // 弹框关闭时的方法
+    $('#viewMsgModal').on('hide.bs.modal', function () {
+      alert("触发了弹框关闭时的方法");
+    });
+
+		
+		function pass() {
+			window.location.href="volunteer/integralRecord/check.do?description=申请通过&deal_status=1&deal_id="+41;
+		}
+		function reject() {
+			 var $value =prompt("驳回理由","");
+			 if($value != null && $value != "") {
+				window.location.href="volunteer/integralRecord/check.do?description="+$value+"&deal_status=2&deal_id="+41;
+			 }
+		}
+		
+  </script>
+
+
+</body>
+
+</html>

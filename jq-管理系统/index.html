@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="renderer" content="webkit">
+
+		<title>后台管理</title>
+
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/mack.css" />
+		<link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+		<link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<!-- 样式 -->
+		<link rel="stylesheet" href="css/index.css">
+		<!-- 地图 -->
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CZohyzMKMBEGMqru1to76RHQgp3SxqLV"></script>
+		<style type="text/css">
+			/*h3:nth-child(1){
+				border-top: none;
+			}
+			h3{
+				border-top: 1px dashed #ccc;
+			}*/
+		</style>
+	</head>
+
+	<body class="fixed-sidebar full-height-layout" style="overflow:hidden">
+		<div id="wrapper">
+
+			<!--左侧导航开始-->
+			<nav class="navbar-default navbar-static-side" role="navigation">
+				<div class="nav-close">
+					<i class="fa fa-times-circle sidebar-toggle"></i>
+				</div>
+				<div class="sidebar-collapse">
+					<ul class="nav" id="side-menu">
+						<li>
+							<a class="J_menuItem" href="index_v1.html">
+								<i class="fa fa-home"></i>
+								<span class="nav-label">后台首页</span>
+							</a>
+						</li>
+						<li style="display: none;">
+							<a href="#" class="nav-toggle"><i class="fa fa-list-alt"></i> <span class="nav-label">信息管理</span><span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="device_manage.html">图片管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="device_manage.html">公告管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="device_manage.html">设备管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="vip_manage.html">会员管理</a>
+								</li>
+							</ul>
+						</li>
+						<li id="rescue">
+							<a href="#" class="nav-toggle">
+								<i class="fa fa-heart"></i> <span class="nav-label">秒帮救援</span><span class="fa arrow"></span>
+							</a>
+							<ul class="nav nav-second-level">
+								<li class="baoxian">
+									<a class="J_menuItem" href="risk.html?type=1">报险受理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="risk.html?type=2">报险处理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="risk.html?type=3">处理完成</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="sign_manage.html">签到管理</a>
+								</li>
+							</ul>
+						</li>
+						<li style="display: none;">
+							<a class="nav-toggle" href="#">
+								<i class="fa fa-desktop"></i>
+								<span class="nav-label">系统管理</span>
+								<span class="fa arrow"></span>
+							</a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="organ_manage.html">角色管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="system_user.html">用户管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="versition_control.html">版本控制</a>
+								</li>
+							</ul>
+						</li>
+						
+						<li style="display: none;">
+							<a href="#" class="nav-toggle"><i class="fa fa-book"></i> <span class="nav-label">财务中心</span><span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li>
+									<a class="J_menuItem" href="table_basic.html">发票管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="setmeal_manage.html">套餐管理</a>
+								</li>
+								<li>
+									<a class="J_menuItem" href="order_manage.html">订单管理</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<!--左侧导航结束-->
+			<!--右侧部分开始-->
+			<div id="page-wrapper" class="gray-bg dashbard-1">
+				<!--页面顶部-->
+				<div class="row border-bottom">
+					<div class="header navbar">
+						<!-- 标题栏开始 -->
+						<div class="navbar-inner">
+							<div class="container-fluid">
+								<!-- LOGO开始 -->
+								<a class="brand" href="#">
+									<img class="logo-img" src="images/logo1.png" alt="logo" />
+									<span class="instruct aa" id="instructs"><img src="images/zs.png"/></span>
+								</a>
+								<!-- LOGO结束 -->
+								<!-- 标题功能开始 -->
+								<ul class="nav pull-right">
+									<!-- 用户登录下拉菜单开始 -->
+									<li class="dropdown user">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+											<img class="user-photo" alt="" src="images/avatar1_small.jpg" />
+											<span class="username">Bob Nilson</span>
+											<i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="dropdown-menu">
+											<li>
+												<a data-toggle="modal" data-target="#userInfoModal">
+													<i class="fa fa-user"></i> 修改资料
+												</a>
+											</li>
+											<li class="logouts">
+												<a href="#">
+													<i class="fa fa-power-off"></i> 退出
+												</a>
+											</li>
+										</ul>
+									</li>
+									<!-- 用户登录下拉菜单结束 -->
+								</ul>
+								<!-- 标题功能结束 -->
+							</div>
+						</div>
+						<!-- 标题栏结束 -->
+					</div>
+					<div class="border-bottom11"></div>
+				</div>
+				<div class="row J_mainContent" id="content-main">
+					<iframe id="J_iframe" width="100%" height="100%" src="index_v1.html" frameborder="0" data-id="index_v1.html" seamless></iframe>
+				</div>
+			</div>
+			<!--右侧部分结束-->
+		</div>
+		<!-- 用户资料弹框 -->
+		<div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">个人资料</h4>
+					</div>
+					<div class="modal-body">
+						<!-- 表单 -->
+						<form class="form-horizontal" id="validateForm">
+							<div class="form-group">
+								<input id="loginname" value="admin" name="USERNAME" type="text" placeholder="这里输入用户名" title="用户名" maxlength="32" class="form-control" readonly="readonly">
+							</div>
+							<div class="form-group">
+								<input id="NUMBER" name="number" type="text" maxlength="32" placeholder="这里输入编号" title="编号" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="password" name="password" type="password" placeholder="输入密码" title="密码" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="chkpwd" name="chkpwd" type="password" placeholder="确认密码" title="确认密码" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="name" name="name" type="text" maxlength="32" placeholder="这里输入姓名" title="姓名" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="PHONE_PASS" name="PHONE_PASS" type="text" maxlength="32" placeholder="这里输入电话系统密码" title="电话系统密码" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="PHONE" name="phone" type="number" maxlength="32" placeholder="这里输入手机号" title="手机号" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="EMAIL" name="email" type="email" maxlength="32" placeholder="这里输入邮箱" title="邮箱" class="form-control">
+							</div>
+							<div class="form-group">
+								<input id="BZ" name="BZ" type="text" maxlength="64" placeholder="这里输入备注" title="备注" class="form-control">
+							</div>
+							<div class="form-group text-center">
+								<button type="button" class="btn btn-info save">保存</button>
+								<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 秒帮救援弹框 -->
+		<div class="modal fade" id="riskModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog xin-a">
+				<div class="modal-content">
+					<div class="modal-header xin-b">
+						<button type="button" class="close xin-c" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel">拨打电话</h4>
+					</div>
+					<div class="modal-body xin-d">
+						<!-- 第一行 联系 -->
+						<div id="phone" class="row m-b-sm xin-e">
+							<!--<iframe src="phonebar.html" frameborder="0" style="width:100%;height:105px;"></iframe>-->
+						</div>
+						<div class="Countdown" style=" display: none; width: 50px; height: 50px; border: 1px solid red; position: absolute; left: 20%;top: 10%; z-index: 111111;">
+							<span id="timer"></span>
+							<span id="warring"></span>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-3 xin-g">
+								<h3>用户报险信息:</h3>
+								<div class="col-sm-12">
+									<span class="m-r-xs">当事人:</span>
+									<span id="dangshiren" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">性别:</span>
+									<span id="xingbie" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">状态:</span>
+									<span id="zhuangtai" class="c_3987ec" style="color: red;"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">电话:</span>
+									<span id="dianhua" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">设备码:</span>
+									<span id="shebeima" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">设备类型:</span>
+									<span id="shebeileixing" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">设备电量:</span>
+									<span id="shebeidianliang" class="c_3987ec">%</span>
+								</div>
+								<div class="col-sm-12">
+									<span class="m-r-xs">身份证:</span>
+									<span id="shenfenzheng" class="c_3987ec"></span>
+								</div>
+								<div class="col-sm-12 m-b-sm">
+									<span class="m-r-xs">报险地址:</span>
+									<span id="baoxiandizhi" class="c_3987ec"></span>
+									<button id="shuaxin" type="button" class="btn btn-xs btn-danger" title="刷新" style="float: right;">
+		                                <i class="fa fa-refresh"></i>
+		                                <span class="bold">刷新</span>
+		                            </button>
+								</div>
+								<div><img src="imgs/fengexian.png"/></div>
+								<h3>受信人信息：</h3>
+								<div id="shouxinren">
+
+								</div>
+								<div><img src="imgs/fengexian.png"/></div>
+								<h3>险情推送:</h3>
+								<div class="col-sm-12 m-b-sm" style="border-bottom: 1px solid #ccc;padding-bottom: 10px;">
+									<ul class="prop-list clearfix">
+										<li class="cur">
+											<a href="javascript:void(0)" onclick="test();">
+												<span>110推送</span>
+											</a>
+										</li>
+										<li>
+											<a href="javascript:void(0)">
+												<span>120推送</span>
+											</a>
+										</li>
+										<li class="mes" id="mes1">
+											<a href="javascript:void(0)">
+												<span>短信1</span>
+											</a>
+										</li>
+										<li class="mess" id="mes2">
+											<a href="javascript:void(0)">
+												<span>短信2</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<h3>工作描述:</h3>
+								<div style="border-bottom: 1px solid #ccc;padding-bottom: 10px;">
+									<textarea class="text" id="biaoshi" name="" rows="2" cols="40"></textarea>
+									<div class="m-describe">
+										<div class="workrecord" id="div1">
+											<a class="text-warning" title="电话记录" style="font-size: 20px;">
+												<i class="fa fa-book"></i>
+											</a>
+											<small>工作记录</small>
+										</div>
+										<div class="m-describe-but Handover-list">
+											<button class="btn btn-info m-r-sm submit" id="sub">提交</button>
+											<button class="btn btn-white handover" id="Handover">交接</button>
+											<div class="audio-list j-Handover-list" id="j-Handover-list" style="height:300px;overflow-y:auto">
+												<div class="audio-list-item">
+													<div class="list-name"></div>					
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<h3>案情跟进:</h3>
+								<div class="col-sm-12 m-b">
+									<p style="margin-left: 13px;">
+										<button onclick="alert('跟进')" type="button" class="btn btn-outline btn-success m-t-xs">案情跟进</button>
+										<button id="shoujiwancheng" type="button" class="btn btn-outline btn-warning m-t-xs">受理完成</button>
+										<button id="jiean" type="button" class="btn btn-outline btn-danger m-t-xs">结案</button>
+									</p>
+								</div>
+							</div>
+							<!--地图   图片 音频视频-->
+							<div class="col-sm-9 xin_a">
+								
+								<div class="row map-con">
+									<!-- 地图 -->
+									<div class="col-sm-8 map-parent">
+										<div id="map-container" class="xin_b"></div>
+									</div>
+								
+								<div class="row m-b m-video">
+									<div class="col-sm-7" style="height: 108%;">
+										<div class="ibox-content clearfix video-h">
+											<div> 
+												<div id="videoId" class="carousel-inner">
+														<!--视频-->	
+														
+												</div>
+												<div id="video-dispaly" style="display: none; padding-left: 200px;padding-bottom: 70px;margin-top: 30px;">
+													<img src="imgs/vedio.png"/>
+												</div>
+											</div>
+											
+											<div class="tz">
+												<div id="video-total">
+													<!--第<input class="tz-ipt" type="text" style="cursor: pointer;"/>个/共<span>0</span>个-->
+												</div>
+												<div style="margin-left: 30px;">
+													<span style="margin-right: 10px; cursor:pointer" class="j-video-previous">上一页</span>
+													<span style="cursor:pointer" class="j-video-next">下一页</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-5">
+										<div class="ibox-content clearfix tp-a">
+											<!-- 图片轮播 -->
+											<div class="carousel slide img-slide" data-interval="false" id="carousel1">
+												
+												<div id="imgId" class="carousel-inner">
+													<!--图片-->
+												</div>
+													<div id="img-dispaly" style="display: none; padding-left: 100px;padding-bottom: 30px;margin-top: 20px;">
+														<img src="imgs/img.png"/>
+													</div>
+												
+											</div>
+											<div class="tz_a">
+												<div id="img-total">
+													<!--第<input class="tz_b" type="text" style="cursor: pointer;"/>个/共<span>0</span>个-->
+												</div>
+												<div style="margin-left: 30px;">
+													<span style="margin-right: 10px; cursor:pointer" class="j-img-previous">上一页</span>
+													<span style="cursor:pointer" class="j-img-next">下一页</span>
+												</div>
+											</div>
+										</div>
+										<!-- 音频 -->
+										<div class="audio-v yp-a">
+											<audio controls id="audiolist" class="yp-b">
+												<!--<source src="1.mp3">-->
+											</audio>
+											<div class="input-group pull-right yp-c j-audio-click">
+												<a class="text-primary" title="" style="font-size: 20px;">
+													<i class="fa fa-reorder"></i>
+												</a>
+											</div>
+											<div class="audio-list j-audio-lists j-jiaojie" style="overflow-y:auto;">
+												<div class="audio-list-item" id="v-list"  style="display: block;">
+													<!--<div class="list-name"></div>-->
+												</div>
+											</div>
+											
+											<div style="margin-left: 200px;margin-top: 5px;">
+												<div id="audio-total">
+													<!--第<input type="text" style="width: 40px;height: 20px; cursor: pointer;" />个/共<span>0</span>个-->
+												</div>
+												
+											</div>
+										</div>
+										
+									</div>
+									<!--结束-->
+								</div>
+							</div>
+							<!--音频视频结束-->
+						</div>
+							<!--音频视频结束-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="tab_a" style="width: 90%; height: 90%; background: #FFF;z-index: 9999999999; display: none;position: absolute;top: -15%;left: -5%;">
+			<div style="display: inline-flex; margin-left: 40px;margin-top: 40px;">
+				<!--搜索-->
+						<input type="text" id="tab-val" placeholder="这里输入关键词" />
+						
+						<button id="tab-button">搜索</button>
+					
+				<!--下拉类表-->
+				<div class="tab_select">
+					<select style="height: 26px;" id="tab_select">
+						<option value="0">操作</option>
+						<option value="1">电话</option>
+						<option value="2">短信</option>
+					</select>
+				</div>
+
+				<div class="delete_x" style="margin-left: 1000px; color: #000;height: 30px;width: 20px;">X</div>
+			</div>
+
+			<table class="table table-bordered table-list" id="workrecord-table" style="width: 90%;margin-left: 40px;">
+				
+			</table>
+		</div>
+
+		
+		<div class="tab_bg" style="display: none;"></div>
+		</div>
+		<!-- 全局js -->
+		<script src="js/jquery.min.js?v=2.1.4"></script>
+		<script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js?v=3.3.6"></script>
+		<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+		<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+		<script src="js/plugins/layer/layer.min.js"></script>
+		<script src="js/videoAudioImg.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+		<!-- Bootstrap table -->
+		<script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+		<script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+		<script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CZohyzMKMBEGMqru1to76RHQgp3SxqLV"></script>
+		
+		<!-- 自定义js -->
+		<script type="text/javascript" src="js/index.js"></script>
+		<!-- 第三方插件 -->
+		<script src="js/plugins/pace/pace.min.js"></script>
+		<!--<script src="js/map.js" type="text/javascript" charset="utf-8"></script>-->
+		<script>
+			
+//			juese = JSON.parse(localStorage.getItem('juese'));
+//			console.log(juese)
+//			console.log(juese.cmenu)
+//			console.log
+//			
+//			var str = "<ul class="nav nav-second-level">"
+//				 str +="<li class="baoxian">" + "<a class="J_menuItem" href="risk.html?type=1">" +  +"</a>" + "</li>"
+//				 str +="<li>" + "<a class="J_menuItem" href="risk.html?type=2">" +  +"</a>" + "</li>"
+//				 str +="<li>" + "<a class="J_menuItem" href="risk.html?type=3">" +  +"</a>" + "</li>"
+//				 str +="<li>" + "<a class="J_menuItem" href="sign_manage.html">" +  +"</a>" + "</li>"
+//				 str += "</ul>";
+//				 $('#rescue').append(str);
+			
+			$(function() {
+				var number = localStorage.getItem("number");
+				var phonePass = localStorage.getItem("phonePass");
+				var phoneType = localStorage.getItem("phoneType");
+				var tag1 = null;
+				var tag = "<iframe src=\"phonebar.html?loginName=" + number + "&password=" + phonePass + "&loginType=" + phoneType + "\" frameborder=\"0\" class=\"xin-f\"></iframe>"
+				console.log($('#aaaa'))
+
+				console.log($("iframe"))
+				console.log(number);
+				console.log(phonePass)
+				console.log(phoneType);
+			}); 
+
+			function test() {
+				//alert("abc");
+				
+				
+			}
+			//登出接口
+			$('.logouts').click(function() {
+				var baseURL = 'http://47.104.135.224:8080'
+				$.ajax({
+					type: 'delete',
+					url: baseURL + '/sys/logout',
+					crossDomain: true,
+					xhrFields: {
+						withCredentials: true
+					},
+					data: {},
+					success: function(res) {
+						console.log(res);
+						window.location.href = "login.html";
+					},
+					error: function(error) {}
+				});
+			})
+			
+			// 初始化地图
+			function initMap(x, y, type, local) {
+//				alert("初始化地图");
+				// 创建地图
+				var map = new BMap.Map("map-container");
+				var mPoint = new BMap.Point(116.404, 39.915);
+				map.enableScrollWheelZoom();
+				map.centerAndZoom(mPoint, 14);
+				var circle = new BMap.Circle(mPoint, 1000, {
+					fillColor:"#b9d3f4",
+					strokeWeight: 1,
+					fillOpacity: 0.5,
+					strokeOpacity: 0.3
+				});
+				map.addOverlay(circle);
+				var local = new BMap.LocalSearch(map, {
+					renderOptions: {
+						map: map,
+						autoViewport: false
+					}
+				});
+				local.searchNearby('餐馆', mPoint, 1000);
+				// 定义一个控件类，即function    
+				function ZoomControl() {
+					// 设置默认停靠位置和偏移量  
+					this.defaultAnchor = BMAP_ANCHOR_TOP_RIGHT;
+					this.defaultOffset = new BMap.Size(10, 10);
+				}
+				// 通过JavaScript的prototype属性继承于BMap.Control   
+				ZoomControl.prototype = new BMap.Control();
+				// 自定义控件必须实现initialize方法，并且将控件的DOM元素返回   
+				// 在本方法中创建个div元素作为控件的容器，并将其添加到地图容器中   
+				ZoomControl.prototype.initialize = function(map) {
+					// 创建一个DOM元素   
+					var div = document.createElement("div");
+					// 添加图标
+					var text = "+";
+					div.appendChild(document.createTextNode(text));
+
+					// 设置样式    
+					div.style.cursor = "pointer";
+					div.style.color = "white";
+					div.style.fontSize = "20px";
+					div.style.height = "30px";
+					div.style.width = "30px";
+					div.style.opacity = "0.6";
+					div.style.textAlign = "center";
+					div.style.border = "1px solid #3987ec";
+					div.style.backgroundColor = "#3987ec";
+					// 绑定事件
+					div.onclick = function(e) {
+						// 地图容器的父元素row
+						var _div = $(map.getContainer()).parents(".map-con");
+						if(text == "+") { // 隐藏其余部分，充满右边
+							// col-sm-8的宽度只有8/12，想要充满右半边，需要将宽度写为100%
+							_div.children(".map-parent").css({
+								width: "100%"
+							});
+							// 将地图容器的高度充满，并且隐藏其余部分
+							$(map.getContainer()).css("height", "672px");
+							_div.siblings(".row").addClass("none");
+							_div.children(".desc-record").addClass("none");
+
+							// 将加号变为减号
+							text = "-";
+							div.innerHTML = "";
+							div.appendChild(document.createTextNode(text));
+						} else { // 还原
+							_div.children(".col-sm-8").css({
+								width: "66.66666667%"
+							});
+							// 将地图容器的高度充满，并且隐藏其余部分
+							$(map.getContainer()).css("height", "332px");
+							_div.siblings(".row").removeClass("none");
+							_div.children(".desc-record").removeClass("none");
+
+							// 将加号变为减号
+							text = "+";
+							div.innerHTML = "";
+							div.appendChild(document.createTextNode(text));
+						}
+					}
+
+					// 添加DOM元素到地图中   
+					map.getContainer().appendChild(div);
+					// 将DOM元素返回  
+					return div;
+				}
+				// 创建控件实例    
+				var myZoomCtrl = new ZoomControl();
+				// 添加到地图当中    
+				map.addControl(myZoomCtrl);
+			}
+			
+			
+
+			//工作记录
+			$('#tab_select').change(function(){
+				 
+				let val = $(this).val();
+				let search = $('#tab-val').val();
+				
+				$("#workrecord-table").bootstrapTable('refresh',{
+					url:`${baseURL}/log/record/15652/${val}`,
+		    		query:{search:search}
+		    	});
+			})
+			//工作记录中的搜索
+			$('#tab-button').click(function(){
+				let search = $('#tab-val').val();
+				
+				$("#workrecord-table").bootstrapTable('refresh',{
+					url:`${baseURL}/log/record/15652`,
+		    		query:{search:search}
+		    	});
+			});
+				//工作记录接口
+			$('.workrecord').click(function() {
+				//点击这里弹窗  
+				$('.tab_a').show();
+				$('.tab_bg').show();
+
+				let gpsInfoId = 15652;
+				
+				$("#workrecord-table").bootstrapTable({
+					dataType: "json",
+					method: 'get',
+					contentType: "application/x-www-form-urlencoded",
+					cache: false,
+					url:`${baseURL}/log/record/15652`,
+					ajaxOptions: {
+						crossDomain: true,
+						xhrFields: {
+							withCredentials: true
+						},
+					},
+					queryParams: function (params) {
+						return {
+							pageNum: params.offset / params.limit +1,
+							size: params.limit,
+							search:''
+						}
+					},
+					
+					pagination: true,
+					sidePagination: 'server',
+					pageNumber: 1,
+					pageSize: 10,
+					pageList: [10],
+					onLoadSuccess: function (data) {
+						data.rows = data.list//数据
+						$("#workrecord-table").bootstrapTable("load", data)
+					
+						console.log(data)
+					
+					},
+					columns: [{
+						title: '时间',
+						field: 'createtime'
+					},{
+						title: '电话',
+						field: 'phone'
+					},{
+						title: '客服名字',
+						field: 'sysname'
+					},{
+						title: '内容',
+						field: 'log_content'
+					},{
+						title: '处理类型',
+						field: 'type'
+					},{
+						title: '状态',
+						field: 'status'
+					}]
+				})
+			});
+				
+			$('.delete_x').click(function() {
+				$('.tab_a').hide();
+				$('.tab_bg').hide();
+			})
+			
+			
+			//提交接口
+			$('#Handover').on('click',function(){
+				let _this = $(this)
+				if(!_this.siblings('.j-Handover-list').is(':visible')){
+					console.log('9-----------------')
+					$.ajax({
+						type:"get",
+						url:"http://47.104.135.224:8080/risk/onlinesysuser",
+						async:true,
+						crossDomain: true,
+					    xhrFields: {
+					      withCredentials: true
+					    },
+						success(res){
+							let html = '';
+							for(let i of res){
+								html +=`<div class="audio-list-item">
+											<div class="list-name j-handover-name" onclick="javascript:hidename();" data-id="${i.user_id}" data-name="${i.name}">${i.name}</div>					
+										</div>`
+								
+							}
+							_this.siblings('.j-Handover-list').html(html);
+						}
+					});
+				}
+				_this.siblings('.j-Handover-list').toggle(500);
+			});
+			$('.j-Handover-list').on('click','.j-handover-name',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				let name = $(this).data('name');
+				let id = $(this).data('id');
+				console.log(name,id)
+				$.ajax({
+					type:"PUT",
+					url:`http://47.104.135.224:8080/risk/transfer/2567/${id}/${name}`,
+					dataType : "json" ,
+					async:true,
+					crossDomain: true,
+				    xhrFields: {
+				      withCredentials: true
+				    },
+					success(res){
+						
+					}
+				});
+			})
+			console.log(window.showModalData)
+			// 头像
+			$(".user-photo").on({
+				click: function(e) {
+					if(e && e.stopPropagation) {
+						e.stopPropagation();
+					} else {
+						(event || window.event).cancelBubble = true;
+					}
+					alert("切换头像")
+				}
+			})
+		
+			// 点击相应的推送变色
+			$("ul.prop-list li").on({
+				click: function() {
+					// 如果当前元素已经变色，再点击无效
+					// if ($(this).hasClass("cur")) return;
+					$(this).addClass("cur").siblings().removeClass("cur");
+					//					alert("点击事件");
+				}
+			});
+
+			$('#riskModal').on('show.bs.modal', function(event) {
+				//				alert("弹框出现时的方法")
+				var button = $(event.relatedTarget); // 触发的按钮或链接
+				var recipient = button.data('whatever');
+				var modal = $(this); // 获取到当前弹框实例
+			});
+
+			// 弹框关闭时的方法  
+			$('#riskModal').on('hide.bs.modal', function() {
+				
+				$(".border-bottom11").empty()
+				$(".xin-e").empty()
+				var number = localStorage.getItem("number")
+				var phonePass = localStorage.getItem("phonePass")
+				var phoneType = localStorage.getItem("phoneType")
+				var tag = "<iframe src=\"phonebar.html?loginName=" + number + "&password=" + phonePass + "&loginType=" + phoneType + "\" frameborder=\"0\" class=\"xin-f\"></iframe>"
+				$(".border-bottom11").append(tag);
+				
+			});
+			
+			// 图片每次旋转的角度 
+			var deg = 0;
+			// 图片点击旋转事件
+			$(".img-slide").find("img").on({
+				click: function() {
+					deg += 90;
+					this.style.transform = "rotate(" + deg + "deg)";
+				}
+			});
+			// 图片左右切换事件,当切换完成时，旋转角度清0
+			$('#carousel1').on('slid.bs.carousel', function() {
+				// 把所有的图片都旋转为0
+				$.each($(".img-slide").find("img"), function(ind, val) {
+					val.style.transform = "rotate(" + 0 + "deg)";
+				});
+				deg = 0;
+			});
+
+			// 视频播放事件
+			$(".video_bg").on({
+				click: function() {
+					// 去掉遮罩 播放当前视频
+					$(this).addClass("none").siblings(".carousel").removeClass("none").find(".active video")[0].play();
+				}
+			});
+			// 视频左右切换事件,当切换完成时，播放视频
+			$('#carousel2').on('slid.bs.carousel', function() {
+				// 左右切换完成时，播放当前视频
+				$(this).find(".active video")[0].play();
+			});
+			// 弹框出现时的方法
+			$('#userInfoModal').on('show.bs.modal', function(event) {
+				//				alert("弹框出现时的方法")
+				var button = $(event.relatedTarget); // 触发的按钮或链接
+				var recipient = button.data('whatever');
+				var modal = $(this); // 获取到当前弹框实例
+			});
+			// 弹框关闭时的方法
+			$('#userInfoModal').on('hide.bs.modal', function() {
+				//				alert("触发了弹框关闭时的方法");
+			});
+
+			// 查看弹框的确定方法
+			$('#userInfoModal .save').on({
+				click: function(event) {
+					// var button = $(event.relatedTarget) // 触发事件的按钮  
+					// var recipient = button.data('whatever') // 解析出data-whatever内容
+					//					alert("触发了确定方法");
+					$('#userInfoModal').modal('hide'); // model隐藏
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

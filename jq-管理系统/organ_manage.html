@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--360浏览器优先以webkit内核解析-->
+    <title>组织管理</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <!-- table样式 -->
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <!-- tree -->
+    <link href="css/plugins/zTree/zTreeStyle.css" rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="ibox">
+            <div class="ibox-content">
+                <!-- 第一行 新增和用户组 -->
+                <div class="row" style="padding:10px 5px;">
+                    <div class="col-sm-1">
+                        <!-- data-toggle="modal" data-target="#addGroup" 点击button 出现弹窗 
+                             data-target指向对应的id -->
+                        <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#groupModal" style="margin-top: 6px;">
+                            <i class="fa fa-plus"></i>
+                            <span class="bold">新增</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-11">
+                        <ul class="group-list" style="margin-left: -5%;">
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-group" style="margin-right: 2px;"></i>
+                                    <span>系统管理员</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-group" style="margin-right: 2px;"></i>
+                                    <span>二级管理员</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">
+                                    <i class="fa fa-group" style="margin-right: 2px;"></i>
+                                    <span>客服</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 第二行 修改和编辑 -->
+                <div class="row m-t">
+                    <div class="col-sm-12">
+                        <span style="margin-right: 5px;font-size: 16px;">本组:</span>
+                        <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#groupModal">
+                            <span class="bold">修改组名称</span>
+                            <i class="fa fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#permissionModal">
+                            <i class="fa fa-pencil"></i>
+                            <span class="bold">组菜单权限</span>
+                        </button>
+                    </div>
+
+                </div>
+                <!-- 第三行 表格 -->
+                <div class="row m-t">
+                    <div class="col-sm-12">
+                        <!-- class="table-no-bordered"没有边框 data-click-to-select="true" 点击表格 选中多选框 data-toggle="table"生成表格 -->
+                        <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-toggle="table" data-mobile-responsive="true">
+                            <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th>角色</th>
+                                    <th>备用</th>
+                                    <th>备用</th>
+                                    <th>邮件</th>
+                                    <th>短信</th>
+                                    <th>站内信</th>
+                                    <th>增</th>
+                                    <th>删</th>
+                                    <th>改</th>
+                                    <th>查</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>超级管理员</td>
+                                    <td>
+                                        <div class="switch">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" class="onoffswitch-checkbox" id="exampleSwitch1">
+                                                <label class="onoffswitch-label" for="exampleSwitch1">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="switch">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" class="onoffswitch-checkbox" id="exampleSwitch2">
+                                                <label class="onoffswitch-label" for="exampleSwitch2">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="switch">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" class="onoffswitch-checkbox" id="exampleSwitch3">
+                                                <label class="onoffswitch-label" for="exampleSwitch3">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="switch">
+                                            <div class="onoffswitch">
+                                                <input type="checkbox" class="onoffswitch-checkbox" id="exampleSwitch4">
+                                                <label class="onoffswitch-label" for="exampleSwitch4">
+                                                    <span class="onoffswitch-inner"></span>
+                                                    <span class="onoffswitch-switch"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input title="每天可发条数" type="number" class="form-control" style="width: auto;">
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#permissionModal" class="btn btn-warning btn-bitbucket btn-xs" title="分配新增权限">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#permissionModal" class="btn btn-warning btn-bitbucket btn-xs" title="分配删除权限">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#permissionModal" class="btn btn-warning btn-bitbucket btn-xs" title="分配修改权限">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#permissionModal" class="btn btn-warning btn-bitbucket btn-xs" title="分配查看权限">
+                                            <i class="fa fa-wrench"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button data-toggle="modal" data-target="#permissionModal" class="btn btn-primary btn-xs">
+                                            <i class="fa fa-pencil"></i>
+                                            <span class="bold">菜单权限</span>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#groupModal" class="btn btn-info btn-xs" title="编辑">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn-group" id="exampleTableEventsToolbar" role="group">
+                            <button data-toggle="modal" data-target="#groupModal" class="btn btn-success btn-sm" style="margin-top: 6px;">
+                                <i class="fa fa-plus"></i>
+                                <span class="bold">新增</span>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+
+
+    </div>
+    <!-- 组弹框 -->
+    <div class="modal fade" id="groupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">新增组</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <input type="text" placeholder="这里输入名称" class="input form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info saveGroup">保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 权限弹框 -->
+    <div class="modal fade" id="permissionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">菜单权限</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- 树 一定要有class="ztree"-->
+                    <div id="permissionTree" class="ztree">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info savePermission">保存</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <!-- Bootstrap table -->
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+    <!-- Bootstrap-Treeview plugin javascript -->
+    <script src="js/plugins/zTree/jquery.ztree.all.min.js"></script>
+    <!-- 当前页面js -->
+    <script>
+        // 点击相应的组变色
+        $("ul.group-list li").on({
+            click: function () {
+                $(this).addClass("cur").siblings().removeClass("cur");
+                alert("点击事件");
+            }
+        });
+        // 弹框出现时的方法
+        $('#groupModal').on('show.bs.modal', function () {
+          alert("触发了弹框出现时的方法");
+          // console.log(111)
+        });
+        // 保存方法
+        $('#groupModal .saveGroup').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了添加组的保存方法");
+                $('#addGroup').modal('hide'); // model隐藏
+            }
+        });  
+        // 弹框关闭时的方法
+        $('#groupModal').on('hide.bs.modal', function () {
+          alert("触发了弹框关闭时的方法");
+        });
+
+        // 树
+        var data = [
+            {
+                "name":"系统管理", 
+                children: [
+                    { "name":"组织管理"},
+                    { "name":"系统用户"},
+                    { "name":"sina"}
+                ]
+            },
+            {
+                "name":"信息管理", 
+                children: [
+                    { "name":"组织管理"},
+                    { "name":"系统用户"},
+                    { "name":"sina"}
+                ]
+            },
+            {
+                "name":"秒帮救援", 
+                children: [
+                    { "name":"组织管理"},
+                    { "name":"系统用户"},
+                    { "name":"sina"}
+                ]
+            },
+            {
+                "name":"志愿者联盟", 
+                children: [
+                    { "name":"组织管理"},
+                    { "name":"系统用户"},
+                    { "name":"sina"}
+                ]
+            }
+        ];
+        // 树设置
+        var settings = {
+            // treeObj: null, // tree的jq对象
+            check: {
+                enable: true, // 显示checkbox
+                chkStyle: "checkbox",
+                chkboxType: {
+                    "Y": "ps", // 被勾选后操作是否会影响节点 p 表示父节点 s 表示子节点
+                    "N": "ps"  // 取消勾选后操作是否会影响节点 p 表示父节点 s 表示子节点
+                }
+            }
+        };
+        // 弹框出现时的方法
+        $('#permissionModal').on('show.bs.modal', function () {
+          alert("触发了弹框出现时的方法");
+          // 初始化树
+          $.fn.zTree.init($("#permissionTree"), settings, data);
+        });
+        // 权限保存方法
+        $('#permissionModal .savePermission').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了权限的保存方法");
+                $('#permissionModal').modal('hide'); // model隐藏
+            }
+        });  
+        
+    </script>
+</body>
+
+</html>

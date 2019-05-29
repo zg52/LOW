@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+		<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache">
+		<META HTTP-EQUIV="Expires" CONTENT="0">
+		<title>softphoneBar</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/font-awesome.min.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/index.css">
+		<script type="text/javascript" src="js/icallcenter/global.js"></script>
+		<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="hojo/hojo.js" djConfig="isDebug:false, parseOnLoad:false"></script>
+		<script type="text/javascript">
+			hojo.registerModulePath("icallcenter", "js/icallcenter");
+			hojo.require("icallcenter.logon");
+			hojo.require("hojo.io.script");
+
+			hojo.addOnLoad(function() {
+				var loginName = icallcenter.logon.getUrlValue("loginName");
+				var password = icallcenter.logon.getUrlValue("password");
+				var extenType = icallcenter.logon.getUrlValue("loginType");
+
+				//    var loginName = "6000@proxy2test3";
+				//    var password = "6000";
+				//    var extenType = "gateway";//Local
+
+				icallcenter.logon.startLogon(loginName, password, extenType);
+				var a = localStorage.getItem("phoneGpsInfoId")
+				var par = window.parent;
+				//console.log(par)
+			});
+
+			hojo.addOnWindowUnload(function() {
+				if(phone) {
+					//phone.destroy(true);
+				}
+			});
+		</script>
+	</head>
+
+	<style>
+		li {
+			list-style: none;
+		}
+		
+		.tab {
+			width: 200px;
+			border: 1px solid #3987ec;
+			height: 30px;
+			border-radius: 15px
+		}
+		
+		.tab li {
+			float: left;
+			text-align: center;
+			line-height: 30px;
+			border-right: 1px solid #3987ec;
+		}
+		
+		.tab li:last-child {
+			border-right: none !important;
+		}
+		
+		.tab li.active {
+			background-color: #3987ec;
+		}
+	</style>
+
+	<body>
+		<div id="softphonebar" class="clearfix" style="padding-top: 15px; padding-bottom: 15px;">
+			<div class="barBox" id="callStatus">
+				<div class="col-sm-2" >
+					<input type="hidden" id="gpsInfoId" />
+					<input type="text" id="icallcenter.dialout.input" placeholder="输入手机号码" value="输入手机号码" onfocus="if(value=='输入手机号码') {value=''}" onblur="if(value==''){value='输入手机号码'}" onKeyDown="if(event.keyCode == 13){softphoneBar.dialout(hojo.byId('icallcenter.dialout.input').value)}" class="inp1 input form-control" />
+				</div>
+				<div class="col-sm-1 softphone_timer Count-down">
+					<span id="softphonebar.peerTimeState" class="peerTimeState" style="line-height: 30px;">00:00:00</span>
+					<span id="softphonebar.peerState" style="color: #3987ec;font-size: 14px;padding-left: 5px;">空闲</span>
+				</div>
+
+				<div class="barBox" id="peerStatus">
+					<div class="col-sm-3 m-t" style="width: 14%;">
+						<ul class="status-list clearfix">
+							<li>
+								<a href="javascript:void(0)" id="IdleEnable" class="IdleEnable cur">
+									<span>空闲</span>
+								</a>
+							</li>
+							<li class="none">
+								<a href="#" onclick="javascript:phone.setBusy(false,'0')" id="IdleDisable" class="IdleDisable" style="display: none"></a>
+							</li>
+
+							<li class="none">
+								<a href="#" onclick="javascript:phone.setBusy(true,'3')" id="EatDisable" class="EatDisable"></a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" id="EatEnable" class="EatEnable">
+									<span>用餐</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" id="RestEnable" class="RestEnable">
+									<span>小休</span>
+								</a>
+							</li>
+							<li class="none">
+								<a href="#" onclick="javascript:phone.setBusy(true,'2')" id="RestDisable" class="RestDisable"></a>
+							</li>
+							<li class="none">
+								<a href="#" onclick="javascript:phone.setBusy(true,'1')" id="BusyDisable" class="BusyDisable"></a>
+							</li>
+							<li>
+								<a href="javascript:void(0)" id="BusyEnable" class="BusyEnable">
+									<span>忙碌</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-sm-9 col-sm-9s">
+					<ul class="phone-list clearfix">
+						<li class="cur">
+							<!-- 带有cur的是激活状态 -->
+							<a href="javascript:void(0)" class="DialEnable" id="DialEnable" onclick="softphoneBar.dialout(hojo.byId('icallcenter.dialout.input').value,hojo.byId('gpsInfoId').value)">
+								<i class="fa fa-volume-control-phone"></i>
+								<span>外呼</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="DialDisable" id="DialDisable" style="display: none"></a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="HangupEnable" id="HangupEnable" onClick="javascript:phone.hangup();">
+								<i class="fa fa-tty"></i>
+								<span>挂断</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="HangupDisable" id="HangupDisable"></a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="HoldEnable" id="HoldEnable" onClick="phone.hold();">
+								<i class="fa fa-pause"></i>
+								<span>保持</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="HoldDisable" id="HoldDisable"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="HoldGetEnable" id="HoldGetEnable" style="display: none" onClick="phone.unhold();"></a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="TransferEnable" id="TransferEnable" onClick="javascript:softphoneBar.toTransfer();">
+								<i class="fa fa-exchange"></i>
+								<span>转移</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="TransferDisable" id="TransferDisable"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="TransferEnable" id="ConsultTransferEnable" style="display: none" onclick="javascript:phone.transfer('912345','external', {})"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="TransferDisable" id="ConsultTransferDisable" style="display: none"></a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="ConsultEnable" id="ConsultEnable" onclick="javascript:softphoneBar.toConsult();">
+								<i class="fa fa-question"></i>
+								<span>咨询</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="ConsultDisable" id="ConsultDisable"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="StopConsultEnable" id="StopConsultEnable" style="display: none" onclick="javascript:phone.stopConsult();"></a>
+						</li>
+
+						<li>
+							<a href="javascript:void(0)" class="ThreeWayCallEnable" id="ThreeWayCallEnable" onclick="javascript:softphoneBar.toThreeWayCall();">
+								<i class="fa fa-recycle"></i>
+								<span>第三方通话</span>
+							</a>
+						</li>
+						<li class="none">
+							<a href="#" class="ThreeWayCallDisable" id="ThreeWayCallDisable"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="ThreeWayCallEnable" id="ConsultThreeWayCallEnable" style="display: none" onclick="javascript:phone.threeWayCall('912345')"></a>
+						</li>
+						<li class="none">
+							<a href="#" class="ThreeWayCallDisable" id="ConsultThreeWayCallDisable" style="display: none"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="netMessage"></div>
+		<iframe id="icallcenter.iframe" style="display: none"></iframe>
+		
+	</body>
+</html>

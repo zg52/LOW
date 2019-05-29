@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title> - 登录</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+		<link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+		<link href="css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+		<link href="css/animate.css" rel="stylesheet">
+		<link href="css/style.css?v=4.1.0" rel="stylesheet">
+		<script>
+			if(window.top !== window.self) {
+				window.top.location = window.location;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="login-wrapper">
+			<div class="login-container">
+				<div class="login-logo">
+					<div class="login-word">
+						<p>&nbsp;&nbsp;应急救援客服后台系统</p>
+						<p>Emergency rescue customer service system</p>
+					</div>
+				</div>
+				<div class="login-form">
+					<div class="login-text clearfix">
+						<h3 class="pull-left">&nbsp;&nbsp;用户登录</h3>
+					</div>
+					<div class="form-group">
+						<div class="input-group  logo-userName" style="width: 330px;">
+							<div class="input-group-addon">
+								<i class="fa fa-user"></i>
+							</div>
+							<input type="text" class="form-control" placeholder="请输入用户名" required="" value="admin">
+						</div>
+
+					</div>
+					<div class="form-group">
+						<div class="input-group logo-pas" style="width: 330px;">
+							<div class="input-group-addon">
+								<i class="fa fa-lock"></i>
+							</div>
+							<input type="password" class="form-control" placeholder="密码" required="" value="123456">
+						</div>
+					</div>
+					<button class="sub btn btn-info block full-width m-t-lg">登 录</button>
+					<!--</form>-->
+				</div>
+				<div class="fooer-di">
+					<h5 style="color: #ccc;">Copyright © 1999-2019 法师秒帮科技(北京)有限公司</h6>
+		        </div>
+	        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$('.sub').click(function(){
+    		var npt = $('.logo-userName input').val();
+    		var pas = $('.logo-pas input').val();
+//  				url:"http://47.104.135.224:8080/sys/login",服务器
+//  				url:"http://172.16.255.118:8080/sys/login",本地
+    			$.ajax({
+    				type: 'post',
+    				url:"http://47.104.135.224:8080/sys/login",
+    				crossDomain: true,
+    				xhrFields: {
+					    withCredentials: true
+					},
+    				data:{
+    					'username': npt,
+    					'password': pas
+    				},
+    				success: function(res) {
+    					localStorage.setItem('usrname',res.username);
+    					localStorage.setItem('usreid',res.userId);
+    					localStorage.setItem('number',res.number);
+    					localStorage.setItem('phonePass',res.phonePass);
+    					localStorage.setItem('phoneType',res.phoneType);
+    					localStorage.setItem('juese',JSON.stringify(res.role));
+						console.log(res);	
+						console.log(localStorage);
+						window.location.href = "index.html"; 
+					},
+					error: function(error) {
+						
+					}
+    			});
+    		})
+    	})
+    	
+    </script>
+
+</body>
+
+</html>

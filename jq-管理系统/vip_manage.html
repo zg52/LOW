@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>会员管理</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="css/plugins/chosen/chosen.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/plugins/messenger/messenger.css" rel="stylesheet">
+    <link href="css/plugins/messenger/messenger-theme-future.css" rel="stylesheet">
+    <link href="css/style.css?v=4.1.0" rel="stylesheet">
+    <!-- 样式 -->
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <!-- 搜索 -->
+                <div class="row m-b">
+                    <div class="col-sm-12 form-inline">
+                        <div class="form-group">
+                            <!-- input -->
+                            <div class="input-group keySearch">
+                                <i class="fa fa-search"></i>
+                                <input type="text" placeholder="这里输入关键词" class="input form-control">
+                            </div>
+                            <!-- 搜索按钮 -->
+                            <div class="input-group">
+                                <button type="button" class="btn" title="检索">
+                                    <i class="fa fa-search" style="color: #269abc;"></i>
+                                </button>
+                            </div>
+                            <!-- select -->
+                            <div class="input-group">
+                                <select id="flag" class="chosen-select" style="width:140px;" tabindex="2">
+                                    <option value="1">全部会员</option>
+                                    <option value="110000" hassubinfo="true">会员列表</option>
+                                    <option value="120000" hassubinfo="true">停用列表</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <table id="exampleTableEvents" class="table-no-bordered" data-click-to-select="true" data-mobile-responsive="true">
+                            <thead>
+                                <tr>
+                                    <th data-checkbox="true"></th>
+                                    <th>ID</th>
+                                    <th>真实姓名</th>
+                                    <th>身份证</th>
+                                    <th>联系电话</th>
+                                    <th>注册日期</th>
+                                    <th>会员状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>4368</td>
+                                    <td>王蓓</td>
+                                    <td>341623198407106038</td>
+                                    <td>18310426608</td>
+                                    <td>2017-12-19 14:18:01.0</td>
+                                    <td>正常</td>
+                                    <td>
+                                        <button type="button" title="绑定设备" class="btn btn-link btn-xs">
+                                            <i class="fa fa-list-alt"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#viewMsgModal" type="button" title="查看" class="btn btn-link btn-xs">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <button type="button" title="停用" class="abandon btn btn-link btn-xs">
+                                            <i class="fa fa-pause"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#resetModal" type="button" title="重置密码为miaouser" class="btn btn-link btn-xs">
+                                            <i class="fa fa-refresh"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>4368</td>
+                                    <td>王蓓</td>
+                                    <td>341623198407106038</td>
+                                    <td>18310426608</td>
+                                    <td>2017-12-19 14:18:01.0</td>
+                                    <td>正常</td>
+                                    <td>
+                                        <button type="button" title="绑定设备" class="btn btn-link btn-xs">
+                                            <i class="fa fa-list-alt"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#viewMsgModal" type="button" title="查看" class="btn btn-link btn-xs">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <button type="button" title="停用" class="abandon btn btn-link btn-xs">
+                                            <i class="fa fa-pause"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#resetModal" type="button" title="重置密码为miaouser" class="btn btn-link btn-xs">
+                                            <i class="fa fa-refresh"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>4368</td>
+                                    <td>王蓓</td>
+                                    <td>341623198407106038</td>
+                                    <td>18310426608</td>
+                                    <td>2017-12-19 14:18:01.0</td>
+                                    <td>正常</td>
+                                    <td>
+                                        <button type="button" title="绑定设备" class="btn btn-link btn-xs">
+                                            <i class="fa fa-list-alt"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#viewMsgModal" type="button" title="查看" class="btn btn-link btn-xs">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <button type="button" title="停用" class="abandon btn btn-link btn-xs">
+                                            <i class="fa fa-pause"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#resetModal" type="button" title="重置密码为miaouser" class="btn btn-link btn-xs">
+                                            <i class="fa fa-refresh"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td data-checkbox="true"></td>
+                                    <td>4368</td>
+                                    <td>王蓓</td>
+                                    <td>341623198407106038</td>
+                                    <td>18310426608</td>
+                                    <td>2017-12-19 14:18:01.0</td>
+                                    <td>正常</td>
+                                    <td>
+                                        <button type="button" title="绑定设备" class="btn btn-link btn-xs">
+                                            <i class="fa fa-list-alt"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#viewMsgModal" type="button" title="查看" class="btn btn-link btn-xs">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                        <button type="button" title="停用" class="abandon btn btn-link btn-xs">
+                                            <i class="fa fa-pause"></i>
+                                        </button>
+                                        <button data-toggle="modal" data-target="#resetModal" type="button" title="重置密码为miaouser" class="btn btn-link btn-xs">
+                                            <i class="fa fa-refresh"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="btn-group hidden-xs" id="exampleTableEventsToolbar" role="group">
+                            <button data-toggle="modal" data-target="#startModal" type="button" title="批量启用" class="btn btn-outline btn-default">
+                                <i class="fa fa-play" aria-hidden="true"></i>
+                            </button>
+                            <button data-toggle="modal" data-target="#startModal" type="button" title="批量停用" class="btn btn-outline btn-default">
+                                <i class="fa fa-pause" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <!-- End Panel Other -->
+    </div>
+
+    <!-- 查看用户资料弹框 -->
+    <div class="modal fade" id="viewMsgModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+      <div class="modal-dialog modal-lg" style="width: 600px;">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">查看</h4>
+              </div>
+              <div class="modal-body">
+                  <!-- 表单 -->
+                  <form class="form-horizontal" id="validateForm">
+                      <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">真实姓名:</label>
+                        <div class="col-sm-10">
+                          <input id="username" name="username" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="sex" class="col-sm-2 control-label">性别:</label>
+                        <div class="col-sm-10">
+                          <input id="sex" name="sex" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">邮箱:</label>
+                        <div class="col-sm-10">
+                          <input id="email" name="email" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="id_type" class="col-sm-2 control-label">证件类型:</label>
+                        <div class="col-sm-10">
+                          <input id="id_type" name="id_type" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="id_card" class="col-sm-2 control-label">证件号码:</label>
+                        <div class="col-sm-10">
+                          <input id="id_card"   name="id_card" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="phone" class="col-sm-2 control-label">手机号码:</label>
+                        <div class="col-sm-10">
+                          <input id="phone"   name="phone" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">居住地:</label>
+                        <div class="col-sm-10">
+                          <input id="address"   name="address" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">会员状态:</label>
+                        <div class="col-sm-10">
+                          <input value="正常" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">注册时间:</label>
+                        <div class="col-sm-10">
+                          <input type="text" name="create_date" id="create_date" value="2017-12-19 14:18:01.0" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="address" class="col-sm-2 control-label">绑定微信:</label>
+                        <div class="col-sm-10">
+                          <input id="weixin" name="weixin" type="text" class="form-control" readonly="readonly">
+                        </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- 重置密码弹框 -->
+    <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">重置密码</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定要重置密码？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 批量启用、停用弹框 -->
+    <div class="modal fade" id="startModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- modal-sm 小弹窗 modal-lg 大弹窗 -->
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">批量启用</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定要启用选中的会员吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-info confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 全局js -->
+    <script src="js/jquery.min.js?v=2.1.4"></script>
+    <script src="js/bootstrap.min.js?v=3.3.6"></script>
+
+    <!-- 自定义js -->
+    <script src="js/content.js?v=1.0.0"></script>
+
+
+    <!-- Bootstrap table -->
+    <script src="js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+    <script src="js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+    <script src="js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+    <!-- Chosen -->
+    <script src="js/plugins/chosen/chosen.jquery.js"></script>
+    <!-- messenger -->
+    <script src="js/plugins/messenger/messenger.js"></script>
+    <script>
+        // 表格初始化
+        $('#exampleTableEvents').bootstrapTable({
+            pagination: true, // 分页
+            pageNumber: 1, // 首页页码
+            pageSize: 10, // 每页数据个数
+            pageList: [10, 25, 50, 100] // 页面数据条数
+        });
+
+        // 下拉框初始化
+        $(".chosen-select").chosen({});
+        // 下拉框的change事件
+        $('#flag').on('change', function(e, params) {
+          alert("触发了下拉框的change事件")
+        });
+        // 对下拉框进行初始化或者通过js给下拉框插入option都需要更新chosen
+        // $('.chosen-select').trigger('chosen:updated');
+
+
+        // 防止弹框中下拉框无宽度
+        $(".chosen-container").css("width", "100%");
+        // 弹框出现时的方法
+        $('#resetModal').on('show.bs.modal', function () {
+          alert("触发了弹框出现时的方法");
+        });
+        
+        // 弹框关闭时的方法
+        $('#resetModal').on('hide.bs.modal', function () {
+          alert("触发了弹框关闭时的方法");
+        });
+
+        // 重置密码弹框的确定方法
+        $('#resetModal .confirm').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了确定方法");
+                $('#resetModal').modal('hide'); // model隐藏
+            }
+        });  
+
+        // 批量启用、停用的保存方法
+        $('#startModal .confirm').on({
+            click: function (event) {
+                // var button = $(event.relatedTarget) // 触发事件的按钮  
+                // var recipient = button.data('whatever') // 解析出data-whatever内容
+                alert("触发了确定方法");
+                $('#startModal').modal('hide'); // model隐藏
+            }
+        });  
+
+        // 提示框位置
+        $._messengerDefaults = {
+          extraClasses: 'messenger-fixed messenger-theme-future messenger-on-top'
+        };
+        // 提示框的使用方法
+        $(".abandon").click(function () {
+          $.globalMessenger().post({
+          message: "停用成功",//提示信息
+          type: 'info',//消息类型。error、info、success
+          hideAfter: 200,//多长时间消失
+          showCloseButton:true,//是否显示关闭按钮
+          hideOnNavigate: true //是否隐藏导航
+          });
+        });
+    </script>
+
+
+</body>
+
+</html>
